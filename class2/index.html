@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Class 2</title>
+  </head>
+  <body>
+    <div
+      id="app"
+      style="margin-bottom: 1rem"
+    >
+      {{mostrar(nome ,idade)}}
+    </div>
+
+    <div id="country">
+      <div style="margin-bottom: 1rem">
+        <p
+          v-html="(
+          pais == 'argentina' ? argentina :
+          pais == 'brazil' ? brazil :
+          pais == 'china' ? china :
+          pais == 'uk' ? uk :
+          pais == 'usa' ? usa : ''  
+        )"
+        ></p>
+        <p
+          v-html="(
+            pais == 'argentina' ? 'América do Sul' :
+          pais == 'brazil' ? 'América do Sul' :
+          pais == 'china' ? 'Ásia' :
+          pais == 'uk' ? 'Europa' :
+          pais == 'usa' ? 'América do Norte' : ''  
+        )"
+        ></p>
+      </div>
+
+      <div
+        v-for="pais in paises()"
+        style="margin-bottom: 1rem"
+      >
+        <p v-html="pais.bandeira"></p>
+        <p v-html="pais.continente"></p>
+      </div>
+
+      <Country
+        :name="china"
+        continent="Ásia"
+      />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        {{title}} <br />
+        <small v-html="subtitle"></small>
+      </header>
+      <section class="container">
+        <section class="container__content">
+          <!-- sem atalho -->
+
+          <div v-if="aviso">Este é um aviso</div>
+          <div v-bind:id="divid">Este é uma div qualquer...</div>
+          <a v-bind:href="link">Acessar</a>
+          <div v-bind:id="`item-${n}`">Div qualquer</div>
+          <button v-on:click="clicou">Clique em mim</button>
+
+          <!-- com atalho -->
+
+          <a :href="link2">b7web</a>
+          <button @click="teste">teste</button>
+
+          <form v-on:submit.prevent="enviou">
+            <input
+              type="text"
+              name=""
+              id=""
+            />
+
+            <input
+              type="submit"
+              value="Enviar"
+            />
+          </form>
+        </section>
+        <aside class="container__sidebar">
+          {{name}} <br /><br />
+          {{name.split('').reverse().join('')}}
+        </aside>
+      </section>
+      <footer class="footer"><span v-text="copyright"></span></footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

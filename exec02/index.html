@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header"></header>
+      <section class="container">
+        <section class="container__content">
+          <div class="box1">
+            <p>Digite um nome:</p>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              v-model="name"
+            />
+          </div>
+
+          <button @click="addName">Adicionar</button>
+        </section>
+        <aside class="container__sidebar">
+          Total de nomes: {{total}}
+          <ul v-for="name in names">
+            <li v-html="name"></li>
+          </ul>
+        </aside>
+      </section>
+      <footer class="footer"></footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header"></header>
+      <section class="container">
+        <section class="container__content">
+          {{name}} <br />
+          {{switchName}}
+          <div style="margin-top: 1rem">
+            <input v-model="conta" /><span>{{aviso}}</span>
+          </div>
+          <div>
+            Primeiro nome:
+            <input v-model="primeiroNome" />
+          </div>
+          <div>
+            Segundo nome:
+            <input v-model="segundoNome" />
+          </div>
+        </section>
+        <aside class="container__sidebar">
+          {{result}} <br />
+          <input v-model="nomeCompleto" />
+        </aside>
+      </section>
+      <footer class="footer"></footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

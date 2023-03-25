@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Treino de VueJs</title>
+  </head>
+  <body>
+    <div
+      id="app"
+      v-html="frase"
+    ></div>
+
+    <div id="placar">
+      <div>{{ n }}</div>
+      <span v-if="n > 5">Parabéns, você passou de 5 pontos</span>
+    </div>
+
+    <div id="lista">
+      <ul>
+        <li v-for="info in nomes">
+          <span>Sr. </span>
+          <span v-text="info.nome + ' ' + info.sobrenome"></span>
+        </li>
+      </ul>
+    </div>
+
+    <div id="bind">
+      <input
+        type="text"
+        v-model="texto"
+      />
+      <span v-text="texto"></span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

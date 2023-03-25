@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <p>1) {{ 2 + 2 }}</p>
+        <p>2) {{ "teste".toUpperCase() }}</p>
+        <p>3) Produtos: {{ name }}, R$ {{price}}, {{descount * 100}}%</p>
+        <p>4) Hora Certo: {{ rightTime() }}</p>
+        <p>5) Preço com Desconto: R$ {{ priceWithDescount.toFixed(2) }}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                name: 'Pen',
+                price: 6.89,
+                descount: 0.15
+            },
+            methods: {
+                ['rightTime']() {
+                    return new Date().toLocaleString()
+                }
+            },
+            computed: {
+                priceWithDescount() {
+                    return this.price * (1 - this.descount)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

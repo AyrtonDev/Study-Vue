@@ -1,0 +1,55 @@
+body {
+  font-family: Arial;
+  font-size: 14px;
+}
+#app {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.header {
+  min-height: 100px;
+  background-color: #eee;
+}
+
+.container {
+  display: flex;
+  min-height: 400px;
+}
+.container__content {
+  flex: 1;
+  background-color: #ddd;
+  padding: 10px;
+}
+.container__sidebar {
+  width: 300px;
+  background-color: #d1d1d1;
+  padding: 10px;
+}
+
+.footer {
+  min-height: 100px;
+  background-color: #eee;
+}
+
+.ativo {
+  border: 2px solid #000;
+}
+
+.blue {
+  background-color: #0000ff;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.warning {
+  background-color: #0000ff;
+  color: white;
+}
+
+.error {
+  background-color: #ff0000;
+  color: white;
+}

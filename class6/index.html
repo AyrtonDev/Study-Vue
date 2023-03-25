@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header"></header>
+      <section class="container">
+        <section class="container__content">
+          <div
+            v-bind:class="{ativo: isActive}"
+            v-bind:style="{ border: '2px solid #0f0', width: '10%', backgroundColor: 'white', margin: '0 auto', textAlign: 'center' }"
+          >
+            ativo
+          </div>
+
+          <div
+            class="oculto"
+            v-bind:class="errorDivClass"
+          >
+            {{errorMsg}}
+          </div>
+
+          <div v-if="win">Você Ganhou!</div>
+          <div v-else>Você Perdeu!</div>
+          <div v-for="(value, key, index) in objeto">
+            {{index}} - {{key}} : {{value}}
+          </div>
+
+          <ul
+            style=""
+            v-for="name in names"
+          >
+            <li>{{name}}</li>
+          </ul>
+        </section>
+        <aside class="container__sidebar"></aside>
+      </section>
+      <footer class="footer"></footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- Vue.set e um comando para alteração de array e objeto em tempo real -->
+<!-- Vuse.set(app.names, 2, 'valor') -->
